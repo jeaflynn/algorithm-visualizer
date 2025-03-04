@@ -20,20 +20,20 @@ async function bubbleSort(arr) {
         swapped = false;
 
         for (let j=0; j < n-i-1; j++) {
-            updateVisualizationWithComparison(array, j, j+1);
+            updateVisualization(array, [j, j+1], 'comparing');
             comparisons++;
 
             await delay(100);
         
             if (array[j] > array[j+1]){
-                updateVisualizationWithSwap(array, j, j+1);
+                updateVisualization(array, [j, j+1], 'swapping');
                 swaps++;
 
                 await delay(100);
 
                 [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
         
-                updateVisualizationWithSwap(array, j, j+1);
+                updateVisualization(array, [j, j+1], 'swapping');
 
                 await delay(100);
 
@@ -44,11 +44,11 @@ async function bubbleSort(arr) {
 
         }
 
-        updateVisualizationWithSorted(array, n-i-1);
+        updateVisualization(array, [n-i-1], 'sorted');
 
         if (!swapped){
             for (let k=0; k<n-i-1; k++){
-                updateVisualizationWithSorted(array, k);
+                updateVisualization(array, [k], 'sorted');
                 await delay(50);
             }
             break;
@@ -58,6 +58,7 @@ async function bubbleSort(arr) {
     return array;
 }
 
+```
 /* Updates visualization with elements being compared */
 function updateVisualizationWithComparison(array, index1, index2) {
     updateVisualization(array, [index1, index2], 'comparing');
@@ -72,3 +73,4 @@ function updateVisualizationWithSwap(array, index1, index2) {
 function updateVisualizationWithSorted(array, index) {
     updateVisualization(array, [index], 'sorted');
 }
+```
