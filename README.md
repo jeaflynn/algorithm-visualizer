@@ -3,7 +3,16 @@
 - A simple web based visualization tool for sorting algorithms.
 - This program was created to assist with understanding of how sorting works by visualizing the process step by step.
 
-## CURRENTLY ONLY HAS BUBBLE SORT ##
+# Currently Implemented Algorithms
+
+- Bubble Sort
+
+# Future Algorithms
+
+- Selection Sort
+- Insertion Sort
+- Merge Sort
+- Quick Sort
 
 # Features
 
@@ -27,7 +36,7 @@
 git clone https://github.com/jeaflynn/algorithm-visualizer.git
 ```
 
-2. Open index.html in your browser
+2. Open `index.html` in your browser
 - Locate the file in your directory
 - Double clicking will open with default browser
 
