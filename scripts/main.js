@@ -10,8 +10,12 @@ const MIN_VALUE = 5;
 const MAX_VALUE = 100;
 
 let array = [];
+let sortedArray = [];
+let isSorting = false;
 
 function generateNewArray(){
+    if (isSorting) return;
+
     array = [];
 
     // Generate random numbers
@@ -20,12 +24,12 @@ function generateNewArray(){
         array.push(value);
     }
 
-    updateVisualization();
+    updateVisualization(array);
 
-    console.log("Generated Array: ", array);
+    console.log("Generated Array:", array);
 }
 
-function updateVisualization() {
+function updateVisualization(arr, highlightIndices = [], highlightClass = '') {
     arrayContainer.innerHTML = '';
 
     const maxValue = Math.max(...array);
@@ -36,14 +40,33 @@ function updateVisualization() {
 
         bar.className = 'bar';
 
+        if (highlightIndices.includes(index)){
+            bar.classList.add(highlightClass);
+        }
+
         const heightPercentage = (value / maxValue) * 100;
-        bar.style.height = `${heightPercentage}%`;
-        bar.style.width = '20px';
-        bar.style.margin = '0 2px';
-        bar.style.backgroundColor = '#6b7fd7';
 
         arraycontainer.appendChild(bar);
     });
+}
+
+async function startSorting(){
+    if (isSorting) return;
+
+    isSorting = true;
+    startSortBtn.ariaDisabled = true;
+    generateArrayBtn.disabled = true;
+
+    sortedArray = await bubbleSort(array);
+
+    isSorting = false;
+    startSortBtn.ariaDisabled = false;
+    generateArrayBtn.disabled = false;
+}
+
+function resetArray() {
+    if (isSorting) return;
+    updateVisualization(array);
 }
 
 // Set up event listeners when page loads
@@ -51,5 +74,5 @@ window.onLoad = function(){
     generateArrayBtn.addEventListener('click', generateNewArray);
     generateNewArray();
 
-    console.log(" Algorithm Visualizer initialized");
+    console.log("Algorithm Visualizer initialized");
 };
