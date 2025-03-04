@@ -57,20 +57,3 @@ async function bubbleSort(arr) {
     console.log(`Bubble sort complete. Comparisons: ${comparisons}, Swaps: ${swaps}`);
     return array;
 }
-
-```
-/* Updates visualization with elements being compared */
-function updateVisualizationWithComparison(array, index1, index2) {
-    updateVisualization(array, [index1, index2], 'comparing');
-}
-
-/* Updates visualization with elements being swapped */
-function updateVisualizationWithSwap(array, index1, index2) {
-    updateVisualization(array, [index1, index2], 'swapping');
-}
-
-/* Updates the visualization showing an element in its sorted position */
-function updateVisualizationWithSorted(array, index) {
-    updateVisualization(array, [index], 'sorted');
-}
-```
