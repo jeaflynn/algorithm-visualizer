@@ -18,6 +18,7 @@
 - HTML
 - CSS
 - JavaScript
+- Claude AI for HTML guidance
 
 # How to Use:
 
@@ -27,6 +28,8 @@ git clone https://github.com/jeaflynn/algorithm-visualizer.git
 ```
 
 2. Open index.html in your browser
+- Locate the file in your directory
+- Double clicking will open with default browser
 
 3. Use the controls: 
 - **Generate New Array**: Creates a new random array
