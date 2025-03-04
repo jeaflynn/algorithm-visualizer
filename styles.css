@@ -36,3 +36,23 @@ button:hover {
     background-color: #f0f0f0;
     border-radius: 5px;
 }
+
+/* Bar Styling */
+.bar {
+    width: 20px;
+    margin: 0 2px;
+    background-color: #6b7fd7;
+    transition: height 0.1s ease;
+    border-radius: 2px 2px 0 0;
+}
+
+/* Styles for different states of bars */
+.comparing {
+    background-color: #ffcc00;
+}
+.swapping {
+    background-color: #ff6347;
+}
+.sorted {
+    background-color: #4CAF50;
+}
