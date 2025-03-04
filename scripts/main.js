@@ -45,3 +45,11 @@ function updateVisualization() {
         arraycontainer.appendChild(bar);
     });
 }
+
+// Set up event listeners when page loads
+window.onLoad = function(){
+    generateArrayBtn.addEventListener('click', generateNewArray);
+    generateNewArray();
+
+    console.log(" Algorithm Visualizer initialized");
+};
