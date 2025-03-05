@@ -23,13 +23,13 @@ async function bubbleSort(arr) {
             updateVisualization(array, [j, j+1], 'comparing');
             comparisons++;
 
-            await delay(250);
+            await delay(100);
         
             if (array[j] > array[j+1]){
                 updateVisualization(array, [j, j+1], 'swapping');
                 swaps++;
 
-                await delay(250);
+                await delay(100);
 
                 let temp = array[j];
                 array[j] = array[j+1];
@@ -37,7 +37,7 @@ async function bubbleSort(arr) {
         
                 updateVisualization(array, [j, j+1], 'swapping');
 
-                await delay(250);
+                await delay(100);
 
                 swapped = true;
             }
@@ -51,7 +51,7 @@ async function bubbleSort(arr) {
         if (!swapped){
             for (let k=0; k<n-i-1; k++){
                 updateVisualization(array, [k], 'sorted');
-                await delay(100);
+                await delay(50);
             }
             break;
         }
