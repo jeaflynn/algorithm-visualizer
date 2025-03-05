@@ -35,7 +35,7 @@ function updateVisualization(arr, highlightIndices = [], highlightClass = '') {
     const maxValue = Math.max(...array);
 
     // Create bar for each element in array
-    array.forEach(value => {
+    array.forEach((value, index) => {
         const bar = document.createElement('div');
 
         bar.className = 'bar';
@@ -45,8 +45,9 @@ function updateVisualization(arr, highlightIndices = [], highlightClass = '') {
         }
 
         const heightPercentage = (value / maxValue) * 100;
+        bar.style.height = `${heightPercentage}%`;
 
-        arraycontainer.appendChild(bar);
+        arrayContainer.appendChild(bar);
     });
 }
 
@@ -54,13 +55,13 @@ async function startSorting(){
     if (isSorting) return;
 
     isSorting = true;
-    startSortBtn.ariaDisabled = true;
+    startSortBtn.disabled = true;
     generateArrayBtn.disabled = true;
 
     sortedArray = await bubbleSort(array);
 
     isSorting = false;
-    startSortBtn.ariaDisabled = false;
+    startSortBtn.disabled = false;
     generateArrayBtn.disabled = false;
 }
 
@@ -70,8 +71,10 @@ function resetArray() {
 }
 
 // Set up event listeners when page loads
-window.onLoad = function(){
+window.onload = function(){
     generateArrayBtn.addEventListener('click', generateNewArray);
+    startSortBtn.addEventListener('click', startSorting);
+    resetSortBtn.addEventListener('click', resetArray);
     generateNewArray();
 
     console.log("Algorithm Visualizer initialized");
