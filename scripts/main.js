@@ -32,10 +32,10 @@ function generateNewArray(){
 function updateVisualization(arr, highlightIndices = [], highlightClass = '') {
     arrayContainer.innerHTML = '';
 
-    const maxValue = Math.max(...array);
+    const maxValue = Math.max(...arr);
 
     // Create bar for each element in array
-    array.forEach((value, index) => {
+    arr.forEach((value, index) => {
         const bar = document.createElement('div');
 
         bar.className = 'bar';
