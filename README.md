@@ -18,8 +18,7 @@
 
 - Generate random arrays of numbers
 - Visualize the sorting algorithm in action
-- Control the sorting speed
-- See comparisons and swaps made druing sorting
+- See comparisons and swaps made during sorting
 - Reset and generate new arrays
 
 # Technologies Used
@@ -44,7 +43,6 @@ git clone https://github.com/jeaflynn/algorithm-visualizer.git
 - **Generate New Array**: Creates a new random array
 - **Start Sorting**: Begins the sorting visualization
 - **Reset**: Resets the current array
-- **Speed**: Adjusts the visualization speed
 
 # How BubbleSort Works
 
