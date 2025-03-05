@@ -9,8 +9,20 @@ body {
 }
 
 h1, h2 {
+    font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-weight: 600;
     text-align: center;
     color: #9cdcfe;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 16px;
 }
 
 .controls {
@@ -22,6 +34,8 @@ h1, h2 {
 
 /* Style for buttons */
 button {
+    font-family: 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 13px;
     padding: 10px 15px;
     margin: 5px;
     background-color: #007acc;
