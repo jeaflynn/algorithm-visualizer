@@ -31,7 +31,7 @@ async function bubbleSort(arr) {
 
                 await delay(100);
 
-                [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+                [array[j], array[j+1]] = [array[j+1], array[j]];
         
                 updateVisualization(array, [j, j+1], 'swapping');
 
@@ -40,7 +40,7 @@ async function bubbleSort(arr) {
                 swapped = true;
             }
 
-        updateVisualization(array);
+            updateVisualization(array);
 
         }
 
